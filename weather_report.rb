@@ -12,18 +12,16 @@ class WeatherReport
 
     def exec
       url = 'http://weather.yahoo.co.jp/weather/jp/36/7110.html'
-      #date_path = "//*[@id=\"main\"]/div[6]/table/tbody/tr/td[1]/div/p[1]"
+      date_path = "//*[@id=\"main\"]/div[@class='forecastCity']/table/tr/td/div/p[1]/text()"
       forecast_path = "//*[@id=\"main\"]/div[@class='forecastCity']/table/tr/td/div/p[2]/text()"
       forecast_image_path = "//*[@id=\"main\"]/div[@class='forecastCity']/table/tr/td/div/p[2]/img"
       parsed_html = visit(url)
-      #date = get_elements(parsed_html, date_path).first.to_s
+      date = get_elements(parsed_html, date_path).first.to_s
       forecast = get_elements(parsed_html, forecast_path).first.to_s
-      #binding.pry
       forecast_image_url = get_elements(parsed_html, forecast_image_path).first.attributes['src'].value
-      #binding.pry
       CSV.open("./weather.csv", 'w') do |csv|
-        csv.puts ['徳島の天気', 'お天気像URL']
-        csv.puts [forecast, forecast_image_url]
+        csv.puts ['日付','徳島の天気', 'お天気像URL']
+        csv.puts [date,forecast, forecast_image_url]
       end
     end
 
