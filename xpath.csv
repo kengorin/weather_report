@@ -1,0 +1,3 @@
+URL,City,Date_path,Forecast_path,Forecast_Image_path
+http://weather.yahoo.co.jp/weather/jp/36/7110.html,徳島,//*[@id="main"]/div[@class='forecastCity']/table/tr/td/div/p[1]/text(),//*[@id="main"]/div[@class='forecastCity']/table/tr/td/div/p[2]/text(),//*[@id="main"]/div[@class='forecastCity']/table/tr/td/div/p[2]/img
+http://weather.yahoo.co.jp/weather/13/4410.html,東京,//*[@id="main"]/div[6]/table/tr/td/div/p[1]/text(),//*[@id="main"]/div[6]/table/tr/td/div/p[2]/text(),//*[@id="main"]/div[@class='forecastCity']/table/tr/td/div/p[2]/img
